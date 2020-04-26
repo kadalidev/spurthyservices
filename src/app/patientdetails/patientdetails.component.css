@@ -1,0 +1,38 @@
+/* .hms-details-container{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 30px 0 10px 0;
+}
+.hms-details-form {
+    text-align: left;
+} */
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-form-field {
+  margin-right: 12px;
+}
+
+.hms-patient-dtl-1,
+.hms-patient-dtl-2,
+.hms-patient-dtl-3,
+.hms-patient-dtl-4,
+.hms-patient-dtl-5,
+.hms-patient-dtl-6 {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.hms-patient-dtl-container {
+    margin: 70px 40px 40px 20px;
+}

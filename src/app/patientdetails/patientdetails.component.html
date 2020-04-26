@@ -1,0 +1,153 @@
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()"> 
+    <div class="form-group">
+      <label for="item">Item</label>
+      <input type="text" class="form-control" id="item" required [(ngModel)]="itemValue" name="item">
+    </div>
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<div class="col-md-3">
+  <pre *ngFor="let item of items | async">{{item.content}}</pre>
+</div>
+
+<div class="hms-patient-dtl-container">
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+           <strong>Patient Basic Info</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+             .
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="hms-patient-dtl-1">
+        <mat-form-field>
+          <input matInput placeholder="Patient ID">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <input matInput placeholder="Patient DOM Year">
+        </mat-form-field>
+      </div>
+      <div class="hms-patient-dtl-2">
+        <mat-form-field>
+          <input matInput placeholder="Date" [matDatepicker]="picker" (focus)="picker.open()" readonly>
+        </mat-form-field>
+        <mat-datepicker #picker></mat-datepicker>
+        <br/>
+        <mat-form-field>
+            <input matInput placeholder="Checkin Time">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <input matInput placeholder="Checkout Time">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <input matInput placeholder="Next Location">
+        </mat-form-field>
+      </div>
+      <!-- <mat-form-field>
+        <input matInput type="number" min="1" placeholder="Age">
+      </mat-form-field> -->
+  
+      <!-- <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row> -->
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <strong> Patient Additional Info </strong>
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+            .
+          <mat-icon>map</mat-icon>
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+      <div class="hms-patient-dtl-3">
+        <mat-form-field>
+          <input matInput placeholder="Room ID">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="Patient Type Code">
+        </mat-form-field>
+      </div>
+      <div class="hms-patient-dtl-4"></div>
+      <!-- <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row> -->
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <strong>Procedure</strong>
+        </mat-panel-title>
+        <!-- <mat-panel-description>
+          Inform the date you wish to travel
+          <mat-icon>date_range</mat-icon>
+        </mat-panel-description> -->
+      </mat-expansion-panel-header>
+
+      <div class="hms-patient-dtl-5">
+          <mat-form-field>
+            <input matInput placeholder="Procedre Type">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Forecast Duration">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Actual Duration">
+          </mat-form-field>
+        </div>
+        <div class="hms-patient-dtl-6">          
+          <mat-form-field>
+            <input matInput placeholder="Time Start">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Time End">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Room Tracker Registered">
+          </mat-form-field>
+        </div>
+        
+<!--   
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">End</button>
+      </mat-action-row> -->
+    </mat-expansion-panel>  
+  </mat-accordion>
+</div>
+<div class="col-md-12">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of Patient">
+        <td>{{patient.id}}</td>
+        <td>{{patient.name}}</td>
+        <td>{{patient.email}}</td> 
+      </tr>
+    </tbody>
+  </table>
+</div>

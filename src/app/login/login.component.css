@@ -1,0 +1,27 @@
+.login-wrapper {
+    padding-top: 80px;
+    width: 100%;    
+    height: 100%;
+    text-align: center;    
+}
+
+.login-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.error-container {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.form-content {
+    padding-left: 20px;
+}
+
+.example-header-image {
+    background-image: url('../../assets/login.jpg');
+    background-size: cover;
+}
